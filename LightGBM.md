@@ -5,6 +5,7 @@
     + 빠른 학습 및 예측 수행 시간
     + 더 작은 메모리 사용량
     + 카테고리형 피처의 자동 변환 및 최적 분할
+
 ## params
 * 일반 파라미터
     + boosting (default=gbdt)
@@ -54,5 +55,38 @@
         - 1 = 정보
         - > 1 = 디버그
 
+- pip install
+```bash
+pip3 install lightgbm
+```
 
-## 
+## model fitting
+- Regressor
+```python
+from lightgbm import LGBMRegressor
+model = LGBMRegressor([params])
+model.fit(X_train,Y_train)
+```
+- Classifier
+```python
+from lightgbm import LGBMClassifier
+model =LGBMClassifier([params])
+model.fit(X_train, Y_train)
+```
+
+## LightGBM model 검사
+- model predict
+```python
+y_pred = model.predict(X_test)
+```
+- sklearn 라이브러리를 활용하여 model check
+```python
+metrics(Y_test,y_pred)
+```
+- lightgbm plot_importance 라이브러리를 사용해 변수 중요도 파악 
+```python
+from lightgbm import plot_importance as lgbm_plot_importance
+fig1, ax1 = plt.subplot(figsize=(10,8))
+lgbm_plot_importance(model,ax=ax1)            # ax를 통해 plt 위에 그릴수 있다.
+```
+<img src='./img/xgb_importancd.png'>
