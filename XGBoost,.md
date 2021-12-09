@@ -94,4 +94,4 @@ fig.set_size_inches(150,100)
 # rankdir : 트리의 방향, 디폴트는 위아래 방향 ("LR" : 왼쪽에서 오른쪽 방향) 
 xgb.plot_tree(model, num_tree=0, rankdir='LR',ax=ax2)
 ```
-<img src='./img/xgb_tree.png' width="300" height="250">
+<img src='./img/xgb_tree.png' width="500" height="350">
