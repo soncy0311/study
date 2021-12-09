@@ -48,7 +48,7 @@ py-autoreload = 1               >> python code 수정시 바로 반영
 uwsgi --ini [name].ini
 ```
 
-## downloads nginx
+## downloads nginx (CentOS 7)
 - yum 외부 저장소 추가
 ```
 cd etc/yum.repos.d
@@ -83,4 +83,19 @@ server {
 sudo ln -s /etc/nginx/sites-available/nginx/[name] /etc/nginx/sites-enabled >> symbolic link를 설정하여 사이트 활성화
 sudo rm /etc/nginx/sites-enabled/default    >> 기본구성 삭제
 sudo service nginx restart                  >> nginx restart
+-------------------------------------------------------------------------------------------------
+or
+------------------------------------------------------------------------------------------------
+cd /etc/nginx
+vim nginx.conf
+# 내용
+    location / {
+        include uwsgi_params;
+        uwsgi_pass unix:[sock파일경로];
+    }
+```
+
+## Amazon Linux 2 nginx install
+```bash
+sudo amazon-linux-extras install -y nginx1
 ```
