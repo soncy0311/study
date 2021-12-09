@@ -89,4 +89,4 @@ from lightgbm import plot_importance as lgbm_plot_importance
 fig1, ax1 = plt.subplot(figsize=(10,8))
 lgbm_plot_importance(model,ax=ax1)            # ax를 통해 plt 위에 그릴수 있다.
 ```
-<img src='./img/xgb_importancd.png'>
+<img src='./img/xgb_importance.png'>
