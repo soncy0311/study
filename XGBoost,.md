@@ -3,8 +3,9 @@
 - 설명 : 여러개의 Decision Tree를 조합해서 사용하는 Ensemble 알고리즘
         Gradient Boost 알고리즘을 병렬 학습이 지원되도록 구현한 라이브러리
 - 장점 : GBM 대비 빠른 수행시간, 과적합 규제, 조기 종료 기능 존재, Customizing 용이
-- params
-* 일반 파라미터 : 부스팅을 수행할 때 트리를 사용할지, 선형모델을 사용할지 등을 선택
+
+## params
+* 일반 파라미터
     + booster (default=gbtree)
         - 어떤 부스터 구조를 쓸지 결정
         - 의사결정기반모형(gbtree), 선형모형(gblinear), dart 존재
@@ -46,22 +47,25 @@
         - mlogloss : 다항 클래스 로그 손실
         - auc (reciever operating characteristic curve) : 이진 분류기의 성능 평가
     + seed (default=0) : 재현 가능하도록 난수를 고정
-
     
+
 - pip install
 ```bash
 pip3 install xgboost
 ```
-## Regression
-- model fitting
+## model fitting
+- Regressor
 ```python
 from xgboost import XGBRegressor
 model = XGBRegressor([params])
 model.fit(X_train,Y_train)
 ```
-
-## Classification
-
+- Classifier
+```python
+from xgboost import XGBClassifier
+model = XGBClassifier([params])
+model.fit(X_train, Y_train)
+```
 
 ## xgboost model 검사
 - model predict
@@ -78,6 +82,8 @@ from xgboost import plot_importance as xgb_plot_importance
 fig1, ax1 = plt.subplot(figsize=(10,8))
 xgb_plot_importance(model,ax=ax1)            # ax를 통해 pltd 위에 그릴수 있다.
 ```
+![feature_important](./img/xgb_importance.png)
+
 - xgb plot_tree 라이브러리를 활용한 의사결정 트리 시각화
 ```python
 from xgboost import plot_tree as xgb_plot_tree
@@ -88,3 +94,4 @@ fig.set_size_inches(150,100)
 # rankdir : 트리의 방향, 디폴트는 위아래 방향 ("LR" : 왼쪽에서 오른쪽 방향) 
 xgb.plot_tree(model, num_tree=0, rankdir='LR',ax=ax2)
 ```
+![tree_img](./img/xgb_tree.png)
