@@ -82,7 +82,7 @@ from xgboost import plot_importance as xgb_plot_importance
 fig1, ax1 = plt.subplot(figsize=(10,8))
 xgb_plot_importance(model,ax=ax1)            # ax를 통해 pltd 위에 그릴수 있다.
 ```
-<img src='./img/xgb_importance.png'>
+<img src='../../img/xgb_importance.png'>
 
 - xgb plot_tree 라이브러리를 활용한 의사결정 트리 시각화
 ```python
@@ -94,4 +94,4 @@ fig.set_size_inches(150,100)
 # rankdir : 트리의 방향, 디폴트는 위아래 방향 ("LR" : 왼쪽에서 오른쪽 방향) 
 xgb.plot_tree(model, num_tree=0, rankdir='LR',ax=ax2)
 ```
-<img src='./img/xgb_tree.png' width="500" height="350">
+<img src='../../img/xgb_tree.png' width="500" height="350">
