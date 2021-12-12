@@ -86,10 +86,21 @@ sudo yum install epel-release
 sudo yum insatll python-pip
 ```
 
+#### ubuntu
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install python3-pip
+```
+
 ***
 ## install git
 ```bash
 sudo yum insatll git -y
+```
+```bash
+sudo apt-get install git
 ```
 
 ***
@@ -103,6 +114,11 @@ sudo yum insatll https://dev.mysql.com/get/mysql80-community-release-el7-3.noarc
 #### yum 설치
 ```bash
 sudo yum install mysql-community-server
+```
+
+#### apt 설치
+```bash
+sudo apt-get install mysql-server
 ```
 
 #### 구동되는지 확인후 재시작
@@ -136,4 +152,17 @@ set global validate_password.policy=LOW;
 ```sql
 alter user 'root'@'localhost' identified with mysql_native_password by 'password';
 flush privileges;
+```
+
+## python version change
+- install python new version
+```bash
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.x
+```
+- change default python version
+```bash
+sudo update-alternatives --install /usr/bin/python3 python /usr/bin/python3.7 1
+sudo update-alternatives --config python3
 ```
