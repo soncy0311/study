@@ -14,7 +14,7 @@
     + verbosity (default=1)
         - 유효한 값은 0 (무음), 1 (경고), 2 (정보), 3 (디버그)
 * 부스터 파라미터
-    + learning rate (default=0.3) : 학습률
+    + learning_rate (default=0.3) : 학습률
     + n_estimators (default=100) : 생성할 weak learner의 수
     + max_depth (default=6) : 트리의 maximum depth를 설정
     + min_child_weight (default=1) : 관측치에 대한 가중치 합의 최소
