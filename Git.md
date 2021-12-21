@@ -43,7 +43,7 @@ git push --mirror B
 git lfs push --all B
 ```
 - BFG Repo-Cleaner 사용 (위의 방법을 시행하고 remote rejected 에러 발생시)
-[BFG Repo Cleaner](https://rtyley.github.io/bfg-repo-cleaner/) download
+[BFG Repo Cleaner download](https://rtyley.github.io/bfg-repo-cleaner/)
 ```bash
 cd [A.git]
 java -jar [bfg file route] --strip-blobs-bigger-than 50M
