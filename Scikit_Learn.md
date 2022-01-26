@@ -42,3 +42,12 @@ def metrics(y_test, pred):
     print('정확도 : {0:.2f}, 정밀도 : {1:.2f}, 재현율 : {2:.2f}'.format(accuracy, precision, recall))
     print('f1-score : {0:.2f}, auc : {1:.2f}'.format(f1, roc_score))
 ```
+
+## K-Fold
+```python
+from sklearn.model_selection import KFold
+kf = KFold(n_split=n, shuffle=False, random_state=10)
+for train_index, test_index in kf.split(df) :
+    train = df[train_index]
+    test = df[test_index]
+```
