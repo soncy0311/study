@@ -7,11 +7,20 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.2,random_sta
 ```
 
 ## sklearn 라이브러리를 통한 parameter check
+- Grid Search
 ```python
 from sklearn.model_selection import GridSearchCV
 params = {'param':'check'}                        # {parameter:check하고 싶은 수치} 등록
 clf = GridSearchCV(model, params)
 clf.fit(X_train,Y_train)
+```
+- Randomized Search
+```python
+from sklearn.model_selection import RandomizedSearchCV
+params = {
+    'n_estimators': randint(low=1, high=200),
+    'max_features': randint(low=1, high=8)
+}
 ```
 
 ## sklearn 라이브러리를 통한 Linear Regression
