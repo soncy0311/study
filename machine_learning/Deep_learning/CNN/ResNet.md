@@ -12,7 +12,6 @@
 
 위의 그림과 같이 rayer사이에 shortcut rayer를 만들어 input값이 바로 더해질 수 있는 구조를 생성한다. 결과 곱셈 연산에서 덧셈 연산으로 변형되어 몇개의 layer를 건너뛰는 효과가 있었고, forward와 backward 구조가 단순화되어 gradient 소멸 문제를 해결할 수 있었다고 한다.
 
-<img src='../../../img/resnet_rayer2.png' width="300" height="300">
-<img src='../../../img/resnet_rayer.png' width="300" height="300">
+<img src='../../../img/resnet_rayer2.png' width="300" height="300"> <img src='../../../img/resnet_rayer.png' width="300" height="300">
 
 - 위의 plain model에 비하여 아래의 resnet model은 깊은 layer를 쌓아도 모델의 성능이 크게 떨어지지 않는 것을 볼 수 있다.
