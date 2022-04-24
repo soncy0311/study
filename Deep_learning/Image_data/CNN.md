@@ -2,7 +2,7 @@
 
 ## CNN summary
 
-<img src='../../../img/CNN_summary.png' width="500" height="300">
+<img src='../../img/CNN_summary.png' width="500" height="300">
 
 - model 생성
 ```python
@@ -21,7 +21,7 @@ model = Sequential() # Sequential : layer를 선형으로 연결
 
 #### 합성곱 (Convolution : Conv)
 
-<img src='../../../img/CNN_Convolution.png' width="500" height="300">
+<img src='../../img/CNN_Convolution.png' width="500" height="300">
 
 - 방식 : 일정 크기를 가진 filter, kernel를 일정간격(Stride)으로 이동하면서 연산
 - filter : 모델이 돌아가면서 찾아가는 값
@@ -36,7 +36,7 @@ Cov2D(filters=64,              # 생성할 filter 수를 지정
 
 #### Pooling (풀링)
 
-<img src='../../../img/CNN_Pooling.png' width="500" height="300">
+<img src='../../img/CNN_Pooling.png' width="500" height="300">
 
 - 방식 : MaxPooling(최대값으로 축소), MeanPooling(평균값으로 축소), MinPooling(최소값으로 축소) 존재
          일정 사이즈의 map의 값들을 해당값(max or mean or min)으로 사용해서 map을 축소
@@ -54,7 +54,7 @@ Flatten()
 
 #### Dropout
 
-<img src='../../../img/CNN_Dropout.png' width="500" height="300">
+<img src='../../img/CNN_Dropout.png' width="500" height="300">
 
 - 모델이 overfitting(과적합)되는 것을 방지하기 위하여 학습과정에서 무작위로 뉴런의 집합을 제거
 ```python
@@ -63,7 +63,7 @@ Dropout(rate=0.2) # 해당 비율 만큼의 뉴런의 집합을 제거
 
 #### Dense
 
-<img src='../../../img/CNN_Dense.png'  width="500" height="300">
+<img src='../../img/CNN_Dense.png'  width="500" height="300">
 
 - Convolution + Pooling + Dropout을 통해 감소된 차원으로 완전연결 계층을 생성
 ```python
